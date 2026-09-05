@@ -1,0 +1,73 @@
+body {
+	background-color : #f5f5dc;
+	color : black;
+	font-family:Trebuchet MS, Tahomaf;
+	font-size: 14px;
+	text-align: center;
+}
+h1 {
+	text-transform: uppercase ;
+}
+p {
+	text-align: justify;
+}
+nav a:hover{
+	color:blue;
+}
+nav ul{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	
+}
+nav a {
+		text-decoration: none;
+		color: #800000;
+		justify-content: flex-start;
+		
+}
+table {
+	border-collapse: collapse;
+	padding: 20px
+}
+th, td{
+	border: 1px solid black;
+	padding: 10px
+}
+th{
+	background: grey;
+	color: white;
+}
+td{
+	background: white;
+	color:black;
+}
+img{
+	max-width:100%;
+}
+body{
+	width : 800px;
+	margin:auto;
+	;
+}
+h2{
+	color: navy;
+}
+.som{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	text-align:left;
+}
+h3{
+	font-weight: bold;
+	text-decoration: underline;
+}
+a{
+	color: navy;
+	text-decoration:none;
+	font-weight: bold;
+}
+h4{
+	color: darkgreen;
+}
