@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Spectral:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  --bg: #0B0E1A;
+  --bg-alt: #10142400;
+  --panel: #12162A;
+  --ink: #F0EDE4;
+  --ink-dim: #A9AEC4;
+  --gold: #E8B923;
+  --empire: #8C2F2F;
+  --rebel: #3A5B8C;
+  --max-width: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Spectral', Georgia, serif;
+  line-height: 1.7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#stars {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.hero-kicker {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-dim);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 6.5rem);
+  color: var(--gold);
+  margin: 0;
+  text-shadow: 0 0 30px rgba(232, 185, 35, 0.35);
+  letter-spacing: 0.04em;
+}
+
+.hero-sub {
+  font-style: italic;
+  color: var(--ink-dim);
+  font-size: 1.15rem;
+  max-width: 32ch;
+  margin: 1.25rem 0 2.5rem;
+}
+
+.hero-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.hero-nav a:hover,
+.hero-nav a:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  position: relative;
+}
+
+.section.alt {
+  max-width: none;
+  background: var(--panel);
+}
+
+.section.alt > * {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-index {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--gold);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.section h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  margin: 0 0 1.75rem;
+  color: var(--ink);
+}
+
+.section-body p {
+  color: var(--ink-dim);
+  margin: 0 0 1.1rem;
+  max-width: 62ch;
+}
+
+.section-body p:last-child { margin-bottom: 0; }
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1.75rem;
+  border-left: 2px solid rgba(232, 185, 35, 0.3);
+}
+
+.timeline li {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline li:last-child { padding-bottom: 0; }
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -2.35rem;
+  top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(232, 185, 35, 0.6);
+}
+
+.timeline-era {
+  display: inline-block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.timeline h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.timeline p {
+  margin: 0;
+  color: var(--ink-dim);
+  max-width: 58ch;
+}
+
+/* ---------- Cards ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 1.75rem;
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--ink-dim);
+}
+
+.card h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.card p {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.95rem;
+}
+
+.card-jedi { border-color: var(--gold); }
+.card-sith { border-color: var(--empire); }
+.card-rebel { border-color: var(--rebel); }
+.card-droid { border-color: var(--ink-dim); }
+
+/* ---------- Footer ---------- */
+
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 620px) {
+  .cards { grid-template-columns: 1fr; }
+  .section { padding: 3.5rem 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
